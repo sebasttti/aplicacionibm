@@ -1,1 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {
+     margin: 0;
+     font-family: Roboto, "Helvetica Neue", sans-serif;
+     background-image: url('/assets/fondo.png');
+     background-size: cover;   
+    }
+
+
+.main_container{    
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+       
+}
+
+@media (min-width:576px){
+    .main_container{
+        max-width: 1400px;
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.flex{
+    display: flex;
+}
+
+.flex-column{
+    flex-direction: column;
+}
+
+.justify-content-center{
+    justify-content: center;
+}
+
+.align-items-center{
+    align-items: center;
+}
+
+.w-100{
+    width: 100%;
+}
+
+.justify-content-around{
+    justify-content: space-around;
+}
+
+.justify-content-between{
+    justify-content: space-between;
+}
+
+.spacer{
+    width: 30px;
+}
