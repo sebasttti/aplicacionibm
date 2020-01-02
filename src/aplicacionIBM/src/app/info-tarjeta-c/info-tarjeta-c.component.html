@@ -1,0 +1,40 @@
+<h1>Módulo de Información de Tarjeta y Consumos</h1>
+
+<div *ngIf="auxTarjeta">
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <h5>Número de la tarjeta:</h5>
+    <p>{{infoTarjeta.numero | tc}}</p>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+     <h5>Tipo de la tarjeta:</h5>
+    <p>{{infoTarjeta.tipo}}</p>
+    </div>
+
+  </div>
+</div>
+
+
+<div *ngIf="nConsumos.length>0" class="contenedorTabla">
+
+  
+  <table class="mat-elevation-z8">
+
+    <tr class="cabecera">      
+      <td>Fecha</td>
+      <td>Compra</td>
+      <td>Valor</td>      
+      
+    </tr>
+
+    <tr *ngFor="let consumo of nConsumos">           
+      <td>{{consumo.fecha}}</td>
+      <td>{{consumo.compra}}</td>
+      <td>{{consumo.valor}}</td>     
+    </tr>  
+   
+  </table>
+
+</div>
+
+  

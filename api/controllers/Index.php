@@ -22,6 +22,42 @@ class Index extends Controller{
         imprimirJSON($result);
       }
 
+      public function getallinfo(){
+
+        $table = $_REQUEST['table'];        
+
+        $this->db->query("SELECT * from $table");
+
+        $res = $this->db->responseAll();
+
+        imprimirJSON($res);
+
+      }
+
+      public function getinfo(){
+
+
+        $id=$_REQUEST['id'];
+        $table = $_REQUEST['table'];
+
+        if($table == 'consumo'){
+          $aux = "tarjeta_";
+        }else{
+          $aux = "";
+        }
+
+
+        $this->db->query("SELECT * from $table where id_$aux$table = $id");
+
+        $res = $this->db->responseAll();
+
+        imprimirJSON($res);
+
+
+
+
+      }
+
 }
 
  ?>

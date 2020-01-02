@@ -1,0 +1,28 @@
+<h1>Módulo de asesores</h1>
+
+<div *ngIf="nAsesores.length>0" class="contenedorTabla">
+
+  <button mat-raised-button color="primary" style="margin-bottom: 20px;" routerLink="./agregarcliente">Agregar un Asesor</button>
+
+  <table class="mat-elevation-z8">
+
+    <tr class="cabecera">
+      <td>Nombre</td>
+      <td>Tipo</td>      
+      <td>Acciones</td>
+    </tr>
+
+    <tr *ngFor="let asesor of nAsesores">
+      <td>{{asesor.nombre}}</td>      
+      <td>{{asesor.tipo}}</td>     
+      <td>
+        <button mat-raised-button [routerLink]="['/editarinformacion/', asesor.id]">Editar información</button>
+      </td>
+      
+    </tr>  
+   
+  </table>
+
+</div>
+
+  

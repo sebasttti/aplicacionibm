@@ -1,0 +1,39 @@
+
+<h1>Módulo de clientes</h1>
+
+<div *ngIf="nClientes.length>0" class="contenedorTabla">
+
+  <button mat-raised-button color="primary" style="margin-bottom: 20px;" routerLink="./agregarcliente">Agregar un cliente</button>
+
+  <table class="mat-elevation-z8">
+
+    <tr class="cabecera">
+      <td>Nombre</td>
+      <td>Dirección</td>
+      <td>Ciudad</td>
+      <td>Teléfono</td>
+      <td>Tarjetas</td>
+      <td>Acciones</td>
+    </tr>
+
+    <tr *ngFor="let cliente of nClientes">
+      <td>{{cliente.nombre}}</td>      
+      <td>{{cliente.direccion}}</td>
+      <td>{{cliente.ciudad}}</td>
+      <td>{{cliente.telefono}}</td>
+      <td class="flex flex-column align-items-center">
+      <a *ngFor="let tarjeta of cliente.tarjetas" [routerLink]="['/infotarjeta/', tarjeta.id]" class="mt-10">{{tarjeta.numero | tc}}</a>
+        
+      </td>
+      <td>
+        <button mat-raised-button [routerLink]="['/editarinformacion/', cliente.id]">Editar información</button>
+      </td>
+      
+    </tr>  
+   
+  </table>
+
+</div>
+
+  
+  

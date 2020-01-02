@@ -1,0 +1,28 @@
+table{
+    width: 100%;    
+    text-align: center;
+    margin: auto;
+    border-radius: 5px;
+    th{
+        text-align: center;
+    }
+    td{
+        padding:10px
+    }
+    .cabecera{
+        background-color: #1693a3;        
+    }
+
+}
+
+.contenedorTabla{    
+    overflow-x: auto;
+    margin-top: 30px;
+}
+
+@media (max-width:800px){
+    .contenedorTabla{
+        max-width: 90%;        
+    }
+}
+
