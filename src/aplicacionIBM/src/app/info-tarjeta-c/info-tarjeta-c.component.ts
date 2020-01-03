@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { MainServiceService } from '../core/services/main-service.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { MyValidators } from '../utils/myValidators';
 
 @Component({
   selector: 'app-info-tarjeta-c',
@@ -13,11 +15,25 @@ export class InfoTarjetaCComponent implements OnInit {
   nConsumos = [];
   infoTarjeta: {[k: string]: any} = {};
   auxTarjeta = false;
+  formConsumo: FormGroup;
+  auxConsumo = false;
 
   constructor(
     private mainServiceService: MainServiceService,
-    private route: ActivatedRoute
-  ) { }
+    private route: ActivatedRoute,
+    private formBuilder: FormBuilder
+  ) {
+    this.buildForm();
+  }
+
+  buildForm(){
+    this.formConsumo = this.formBuilder.group({
+      fecha: ['', [Validators.required] ],
+      compra: ['', [Validators.required] ],
+      valor: ['', [Validators.required, MyValidators.isNumber] ]
+    });
+
+  }
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
@@ -86,6 +102,10 @@ export class InfoTarjetaCComponent implements OnInit {
       });
     });
 
+  }
+
+  abrirConsumo() {
+    this.auxConsumo = true;
   }
 
 
