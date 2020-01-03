@@ -44,19 +44,19 @@ En la sección de agregar clientes se debe agregar la información del cliente y
 
 Los consumos están asociados a una tarjeta. Para ver los consumos, se oprime sobre el numero de la tarjeta por consultar.
 
-[![ex-020](imgReadme/add-consumo-1.png)](https://github.com/sebasttti/aplicacionibm/imgReadme/inicio.png)
+[![ex-020](imgReadme/consumo-1.png)](https://github.com/sebasttti/aplicacionibm/imgReadme/inicio.png)
 
 #### Agregar un consumo a una tarjeta
 
 Para agregar un consumo a una tarjeta, se debe oprimir el botón Agregar Consumo en la sección de ocsnumos, el cual desplegará el formulario que le permite a la persona agregar la información.
 
-[![ex-020](imgReadme/add-consumo-2.png)](https://github.com/sebasttti/aplicacionibm/imgReadme/inicio.png)
+[![ex-020](imgReadme/consumo-2.png)](https://github.com/sebasttti/aplicacionibm/imgReadme/inicio.png)
 
 ### Módulo de asesores
 
 El módulo de asesres se puede acceder desde el menú principal, oprimiendo el botón Asesores
 
-[![ex-020](imgReadme/add-asesores.png)](https://github.com/sebasttti/aplicacionibm/imgReadme/inicio.png)
+[![ex-020](imgReadme/asesores.png)](https://github.com/sebasttti/aplicacionibm/imgReadme/inicio.png)
 
 #### Agregar un asesor
 
