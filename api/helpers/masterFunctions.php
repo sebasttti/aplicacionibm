@@ -33,6 +33,13 @@ function imprimirJSON($string){
   echo json_encode($string, JSON_UNESCAPED_UNICODE);
 }
 
+function enviarRespuesta($string){
+  header('Access-Control-Allow-Headers: Access-Control-Allow-Origin, Content-Type');
+  header('Access-Control-Allow-Origin: *');
+  header('Content-type:text/html; charset=utf-8');
+  echo "Hola mundo";
+}
+
 //funcion agregada 24-09-2019
 function exitoFracaso($res){
 

@@ -61,8 +61,7 @@ class Database{
 
   //ejecutar instruccion
   public function execute(){
-    $this->stmt->execute();
-
+    return $this->stmt->execute();
   }
 
   //obtener los registros de la consulta

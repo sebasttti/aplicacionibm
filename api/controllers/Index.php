@@ -53,10 +53,83 @@ class Index extends Controller{
 
         imprimirJSON($res);
 
+      }
 
+      public function sendInfo(){
 
+        $table = $_REQUEST['table'];
+        $tableField = $_REQUEST['tableField'];
+        $data = $_REQUEST['data'];    
+        // $data = "hola mundo";        
+       
+        
+        $this->db->query("INSERT INTO $table ($tableField) values (:data) ");        
+        $this->db->bind(':data',$data);  
+        
+        $res = $this->db->execute();                      
+
+        imprimirJSON(exitoFracaso($res));
 
       }
+
+      public function agregarCliente(){
+
+        $table = $_REQUEST['table'];
+        $tableField = $_REQUEST['tableField'];
+        $data = $_REQUEST['data'];    
+               
+       
+        
+        $this->db->query("INSERT INTO $table ($tableField) values (:data) ");        
+        $this->db->bind(':data',$data);  
+        
+        $res = $this->db->execute();                
+               
+        if ($res) {
+
+            $this->db->query("SELECT * from cliente ORDER BY info_cliente DESC LIMIT 1");
+
+            $res = $this->db->responseUnique();
+
+            imprimirJSON($res);
+
+        }      
+
+      }
+
+      public function agregarTarjeta(){
+
+        $idCliente = $_REQUEST['idCliente'];
+        $data = $_REQUEST['data'];
+        $res = "";
+        
+        
+        // primero separo la data
+        $data = json_decode($data);
+
+        //ahora obtengo un arreglo
+
+        foreach ($data as $key => $tarjeta) {
+
+            $stringInfo = json_encode($tarjeta);
+
+            $this->db->query("INSERT INTO tarjeta (id_cliente_tarjeta, info_tarjeta) values (:idCliente, :data) ");   
+
+            $this->db->bind(':idCliente',$idCliente);     
+            $this->db->bind(':data',$stringInfo);        
+
+            $res = $this->db->execute();                
+
+        }
+
+        imprimirJSON(exitoFracaso($res));
+        
+        return;     
+
+      }
+
+
+
 
 }
 

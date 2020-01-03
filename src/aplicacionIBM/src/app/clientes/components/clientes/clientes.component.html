@@ -3,7 +3,7 @@
 
 <div *ngIf="nClientes.length>0" class="contenedorTabla">
 
-  <button mat-raised-button color="primary" style="margin-bottom: 20px;" routerLink="./agregarcliente">Agregar un cliente</button>
+  <button mat-raised-button color="primary" style="margin-bottom: 20px;" routerLink="../agregarcliente">Agregar un cliente</button>
 
   <table class="mat-elevation-z8">
 
@@ -26,7 +26,7 @@
         
       </td>
       <td>
-        <button mat-raised-button [routerLink]="['/editarinformacion/', cliente.id]">Editar información</button>
+        <button mat-raised-button [routerLink]="['/editarinformacioncliente/', cliente.id]">Editar información</button>
       </td>
       
     </tr>  

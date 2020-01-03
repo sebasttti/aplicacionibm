@@ -8,9 +8,11 @@ spl_autoload_register(function($className){
 });
 
 //aca llamo a todos los archivos de helpers
-foreach ( glob(APP_PATH.'\helpers\*.php') as $filename)
+/* foreach ( glob(APP_PATH.'\helpers\*.php') as $filename)
 {
   include_once $filename;
-}
+} */
+
+require_once 'helpers/masterFunctions.php';
 
  ?>

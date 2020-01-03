@@ -13,13 +13,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { InfoTarjetaModule } from './info-tarjeta/info-tarjeta.module';
 import { InfoTarjetaCComponent } from './info-tarjeta-c/info-tarjeta-c.component';
+import { AgregarClienteComponent } from './clientes/components/agregar-cliente/agregar-cliente.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from './material/material.module';
+import { ModificarClienteComponent } from './clientes/components/modificar-cliente/modificar-cliente.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     EjemploComponent,
-    InfoTarjetaCComponent
+    AgregarClienteComponent,
+    InfoTarjetaCComponent,
+    ModificarClienteComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +37,9 @@ import { InfoTarjetaCComponent } from './info-tarjeta-c/info-tarjeta-c.component
     AsesoresModule,
     InfoTarjetaModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -27,7 +27,7 @@ export class InfoTarjetaCComponent implements OnInit {
       Promise.all([this.traerInfo(this.id, 'consumo'), this.traerInfo(this.id, 'tarjeta'), this.getAllInfo('tipo_tarjeta')])
       .then((response) => {
 
-        const consumos = response[0];
+        const consumos: any = response[0];
         const infoTarjeta = response[1];
         const tipoTarjeta: any = response[2];
 
@@ -46,14 +46,13 @@ export class InfoTarjetaCComponent implements OnInit {
 
         this.auxTarjeta = true;
 
-        //ahora hago la otra parte
+        // ahora hago la otra parte
         for (const iterator of consumos) {
-          
 
           const actualCons = JSON.parse(iterator.info_consumo);
 
           this.nConsumos.push(actualCons);
-          
+
         }
 
       });

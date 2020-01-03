@@ -1,0 +1,109 @@
+
+<div class="agregarCliente m-auto mw-90">
+
+    <h3>En el presente formulario podrás agregar un cliente</h3>
+
+    <form [formGroup]="formClientes">
+
+        <div class="row">
+    
+            <div class="col-xs-11 col-lg-6">
+                <mat-form-field class="w-100">
+                    <input matInput formControlName="nombre" placeholder="Nombre">
+                </mat-form-field>        
+            </div>
+        
+            <div class="col-xs-11 col-lg-6">
+                <mat-form-field class="w-100">
+                    <input matInput formControlName="direccion" placeholder="Dirección">
+                </mat-form-field>        
+            </div>
+        
+        </div>
+        
+        <div class="row">
+        
+            <div class="col-xs-11 col-lg-6">
+                <mat-form-field class="w-100">
+                    <input matInput formControlName="telefono" placeholder="Teléfono">
+                </mat-form-field>        
+            </div>
+        
+            <div class="col-xs-11 col-lg-6">
+                <mat-form-field class="w-100">
+                    <input matInput formControlName="ciudad" placeholder="Ciudad">
+                </mat-form-field>        
+            </div>
+            
+        </div>
+    
+    </form>
+
+</div>
+
+<div class="agregarTC m-auto mw-90" style="padding-top:30px;" *ngIf="tipoTarjeta.length>0">
+
+    <h3>En el presente formulario podrás agregar una o mas tarjetas de crédito</h3>
+
+    <form [formGroup]="formTarjeta">
+
+        <div class="row">
+    
+            <div class="col-xs-12 col-lg-6">
+                <mat-form-field class="w-100">
+                    <input id="numeroTc" matInput placeholder="Numero de tarjeta" (keyup)="changeValue($event)" formControlName="numero">
+                </mat-form-field>        
+            </div>
+        
+            <div class="col-xs-12 col-lg-6">
+                <mat-form-field class="w-100">                
+                <mat-label>Tipo de tarjeta</mat-label>                    
+                <mat-select formControlName="tipo">
+                    <mat-option *ngFor="let tc of tipoTarjeta" [value]="tc.id_tipo_tarjeta">
+                    {{tc.desc_tipo_tarjeta}}
+                    </mat-option>
+                </mat-select>
+                </mat-form-field>     
+            </div>
+        
+        </div>   
+           
+    </form>
+
+</div>
+
+<div class="row center-xs">
+    <div class="col-xs-6 flex" style="justify-content: space-around;">
+        <button mat-raised-button color="primary" (click)="agregarTarjeta()">Agregar tarjeta</button>
+        <button mat-raised-button color="success" (click)="enviarInformacion()">Agregar cliente</button>
+        <button mat-raised-button color="warn" routerLink="../clientes" *ngIf="auxVolver">Volver al modulo de clientes</button>
+       
+    </div>    
+</div>
+
+
+<div class="tablaTC contenedorTabla" *ngIf="tarjetas.length>0">
+
+    <table class="mat-elevation-z8"> 
+        <tr class="cabecera">
+            <td>No.</td>
+            <td>Número de tarjeta</td>
+            <td>Tipo de tarjeta</td>            
+        </tr>
+
+        <tr *ngFor="let tj of tarjetas">
+            <td>{{tarjetas.indexOf(tj)+1}}</td>
+            <td>{{tj.numero | tc}}</td>
+            <td>{{mostrarTipoTarjeta(tj.tipo)}}</td>
+        </tr>
+
+        
+    </table>
+
+</div>
+
+
+
+
+
+

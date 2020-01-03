@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -17,6 +17,26 @@ export class MainServiceService {
 
   getInfo(id, table) {
     return this.http.get(`${environment.url_api}/index/getinfo?id=${id}&table=${table}`);
+  }
+
+  sendInfo($table, $tableField, $data) {
+
+    return this.http.get(`${environment.url_api}/index/agregarCliente?table=${$table}&tableField=${$tableField}&data=${$data}`);
+
+  }
+
+  agregarCliente($table, $tableField, $data) {
+
+    return this.http.get(`${environment.url_api}/index/agregarCliente?table=${$table}&tableField=${$tableField}&data=${$data}`);
+
+  }
+
+  agregarTarjeta($idCliente, $data) {
+
+    console.log($data);
+
+    return this.http.get(`${environment.url_api}/index/agregarTarjeta?idCliente=${$idCliente}&data=${$data}`);
+
   }
 
   constructor(
