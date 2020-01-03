@@ -5,7 +5,7 @@ import { ClientesRoutingModule } from './clientes-routing.module';
 import { ClientesComponent } from './components/clientes/clientes.component';
 import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
-import { ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ClientesComponent],

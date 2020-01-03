@@ -26,7 +26,7 @@ export class InfoTarjetaCComponent implements OnInit {
     this.buildForm();
   }
 
-  buildForm(){
+  buildForm() {
     this.formConsumo = this.formBuilder.group({
       fecha: ['', [Validators.required] ],
       compra: ['', [Validators.required] ],
@@ -54,7 +54,7 @@ export class InfoTarjetaCComponent implements OnInit {
 
         this.infoTarjeta.numero = auxTarjeta.numero;
 
-        const descTarjeta = tipoTarjeta.filter((element) => element.id_tipo_tarjeta === auxTarjeta.tipo)
+        const descTarjeta = tipoTarjeta.filter((element) => element.id_tipo_tarjeta === auxTarjeta.tipo);
 
         this.infoTarjeta.tipo = descTarjeta[0].desc_tipo_tarjeta;
 
