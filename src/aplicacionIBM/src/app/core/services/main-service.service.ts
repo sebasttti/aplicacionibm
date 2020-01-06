@@ -47,5 +47,11 @@ export class MainServiceService {
     );
   }
 
+  agregarConsumo(idTarjeta, data) {
+    return this.http.get(
+      `${environment.url_api}/index/agregarConsumo?idTarjeta=${idTarjeta}&data=${data}`
+    );
+  }
+
   constructor(private http: HttpClient) {}
 }

@@ -149,7 +149,27 @@ class Index extends Controller{
 
       }
 
+      public function agregarConsumo(){
+        $idTarjeta = $_REQUEST['idTarjeta'];
+        $data = $_REQUEST['data'];
+
+        $data = preg_replace('/\\\\/', '', $data);
+
+        $str = " INSERT INTO consumo (id_tarjeta_consumo,info_consumo) VALUES (:idTarjeta,:data) ";      
+
+        $this->db->query($str);
+        $this->db->bind(':idTarjeta',$idTarjeta);
+        $this->db->bind(':data',$data);
+
+        $res = $this->db->execute();
+
+        imprimirJSON(exitoFracaso($res));
+        
+
+      }
+
       public function post(){
+        // var_dump($_POST);
         imprimirJSON($_POST);
       }
 

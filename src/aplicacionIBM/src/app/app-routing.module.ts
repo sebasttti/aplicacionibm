@@ -4,6 +4,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { InfoTarjetaCComponent } from './info-tarjeta-c/info-tarjeta-c.component';
 import { AgregarClienteComponent } from './clientes/components/agregar-cliente/agregar-cliente.component';
 import { ModificarClienteComponent } from './clientes/components/modificar-cliente/modificar-cliente.component';
+import { EjemploComponent } from './clientes/components/ejemplo/ejemplo.component';
 
 
 const routes: Routes = [
@@ -25,14 +26,18 @@ const routes: Routes = [
         loadChildren: () => import('./asesores/asesores.module').then(m => m.AsesoresModule)
       },
       {
-        path: 'infotarjeta/:id',
-        component: InfoTarjetaCComponent
-      },
-      {
         path: 'agregarcliente',
         component: AgregarClienteComponent
+      },
+      {
+        path: 'infotarjeta/:id',
+        component: InfoTarjetaCComponent
       }
     ]
+  },
+  {
+    path: 'ejemplo/:id',
+    component: EjemploComponent
   },
   {
     path: '**',
@@ -43,9 +48,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    preloadingStrategy: PreloadAllModules
-  })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

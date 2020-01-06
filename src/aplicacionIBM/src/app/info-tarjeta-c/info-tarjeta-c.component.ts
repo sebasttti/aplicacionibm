@@ -9,8 +9,8 @@ import { MyValidators } from '../utils/myValidators';
   templateUrl: './info-tarjeta-c.component.html',
   styleUrls: ['./info-tarjeta-c.component.scss']
 })
-export class InfoTarjetaCComponent implements OnInit {
 
+export class InfoTarjetaCComponent implements OnInit {
   id;
   nConsumos = [];
   infoTarjeta: {[k: string]: any} = {};
@@ -106,6 +106,25 @@ export class InfoTarjetaCComponent implements OnInit {
 
   abrirConsumo() {
     this.auxConsumo = true;
+  }
+
+  registrarConsumo() {
+    if (this.formConsumo.valid) {
+
+      const data = JSON.stringify(this.formConsumo.value);
+
+      this.mainServiceService.agregarConsumo(this.id, data)
+      .subscribe(response => {
+        console.log(response);
+        const auxResponse: any = response;
+        if (auxResponse.exito) {
+          window.location.reload();
+        }
+      });
+
+    } else {
+      alert('Por favor revisa la información antes de continuar');
+    }
   }
 
 
