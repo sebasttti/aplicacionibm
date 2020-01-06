@@ -78,7 +78,7 @@ export class AgregarClienteComponent implements OnInit {
 
     const dataTarjeta = JSON.stringify(this.tarjetas);
 
-    this.mainServiceService.sendInfo('cliente', 'info_cliente', dataCliente)
+    this.mainServiceService.agregarCliente('cliente', 'info_cliente', dataCliente)
     .subscribe(response => {
 
       const thisResponse: any = response;

@@ -86,7 +86,7 @@ class Index extends Controller{
                
         if ($res) {
 
-            $this->db->query("SELECT * from cliente ORDER BY info_cliente DESC LIMIT 1");
+            $this->db->query("SELECT * from cliente ORDER BY id_cliente DESC LIMIT 1");
 
             $res = $this->db->responseUnique();
 
@@ -171,6 +171,20 @@ class Index extends Controller{
       public function post(){
         // var_dump($_POST);
         imprimirJSON($_POST);
+      }
+
+      public function agregarEjemplo(){
+        $infoEjemplo = "Hola mundo";
+
+        $str = " INSERT INTO ejemplo (info_ejemplo) VALUES (:infoEjemplo) ";      
+
+        $this->db->query($str);
+        $this->db->bind(':infoEjemplo',$infoEjemplo);
+        
+        $res = $this->db->execute();
+
+        imprimirJSON(exitoFracaso($res));
+
       }
 
 
