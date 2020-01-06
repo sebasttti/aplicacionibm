@@ -59,10 +59,9 @@ class Index extends Controller{
 
         $table = $_REQUEST['table'];
         $tableField = $_REQUEST['tableField'];
-        $data = $_REQUEST['data'];    
-        // $data = "hola mundo";        
-       
-        
+        $data = $_REQUEST['data'];
+        $data = preg_replace('/\\\\/', '', $data);              
+               
         $this->db->query("INSERT INTO $table ($tableField) values (:data) ");        
         $this->db->bind(':data',$data);  
         
@@ -126,6 +125,32 @@ class Index extends Controller{
         
         return;     
 
+      }
+
+
+      public function modificarInfo(){
+
+        $id = $_REQUEST['id'];
+        $table = $_REQUEST['table'];
+        $data = $_REQUEST['data'];
+
+        $data = preg_replace('/\\\\/', '', $data);
+                        
+
+        $str = "UPDATE $table SET info_$table = :data WHERE id_$table = $id ";      
+
+        $this->db->query($str);
+        $this->db->bind(':data',$data);
+
+        $res = $this->db->execute();
+
+        imprimirJSON(exitoFracaso($res));
+        
+
+      }
+
+      public function post(){
+        imprimirJSON($_POST);
       }
 
 

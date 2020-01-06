@@ -22,22 +22,37 @@
 
 <div class="row mt-20" *ngIf="auxConsumo">
 
-  <form [formGroup] = "formConsumo" class="w-100 flex">
-    <div class="col-xs-12 col-md-4">
-      <mat-form-field class="w-100">
-        <input matInput formControlName="fecha" placeholder="Fecha">
-    </mat-form-field>  
-    </div>
-    <div class="col-xs-12 col-md-4">
-      <mat-form-field class="w-100">
-        <input matInput formControlName="compra" placeholder="Compra">
-      </mat-form-field>
-    </div>
-    <div class="col-xs-12 col-md-4">
-      <mat-form-field class="w-100">
-        <input matInput formControlName="valor" placeholder="Valor">
+  <form [formGroup] = "formConsumo" class="w-100 flex flex-column">
+
+    <div class="row">
+
+      <div class="col-xs-12 col-md-4">
+        <mat-form-field class="w-100">
+          <input matInput formControlName="fecha" placeholder="Fecha">
       </mat-form-field>  
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <mat-form-field class="w-100">
+          <input matInput formControlName="compra" placeholder="Compra">
+        </mat-form-field>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <mat-form-field class="w-100">
+          <input matInput formControlName="valor" placeholder="Valor">
+        </mat-form-field>  
+      </div>
+  
     </div>
+
+    <div class="row">
+
+      <div class="col-xs-12">
+        <button mat-raised-button color="primary">Agregar información</button>
+      </div>
+
+    </div>
+    
+    
   </form>
 
 </div>

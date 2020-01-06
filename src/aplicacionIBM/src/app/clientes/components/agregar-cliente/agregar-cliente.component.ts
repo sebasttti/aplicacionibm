@@ -143,7 +143,7 @@ export class AgregarClienteComponent implements OnInit {
     });
 
   }
-  
+
   mostrarTipoTarjeta(id) {
     return this.tipoTarjeta.find((tipo) => tipo.id_tipo_tarjeta === id).desc_tipo_tarjeta;
   }

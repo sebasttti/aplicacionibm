@@ -31,12 +31,7 @@ const routes: Routes = [
       {
         path: 'agregarcliente',
         component: AgregarClienteComponent
-      },
-      {
-        path: 'editarinformacioncliente/:id',
-        component: ModificarClienteComponent
       }
-
     ]
   },
   {

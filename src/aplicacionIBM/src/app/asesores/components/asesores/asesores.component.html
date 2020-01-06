@@ -1,28 +1,74 @@
-<h1>Módulo de asesores</h1>
+<div *ngIf="nAsesores.length>0">
 
-<div *ngIf="nAsesores.length>0" class="contenedorTabla">
+  <h1>Módulo de asesores</h1>
+  
+  <div class="m-auto mw-90 mt-30">
 
-  <button mat-raised-button color="primary" style="margin-bottom: 20px;" routerLink="./agregarcliente">Agregar un Asesor</button>
-
-  <table class="mat-elevation-z8">
-
-    <tr class="cabecera">
-      <td>Nombre</td>
-      <td>Tipo</td>      
-      <td>Acciones</td>
-    </tr>
-
-    <tr *ngFor="let asesor of nAsesores">
-      <td>{{asesor.nombre}}</td>      
-      <td>{{asesor.tipo}}</td>     
-      <td>
-        <button mat-raised-button [routerLink]="['/editarinformacion/', asesor.id]">Editar información</button>
-      </td>
-      
-    </tr>  
-   
-  </table>
+    <h3 *ngIf="auxCrearAsesor">En el presente formulario podrás crear un asesor</h3>
+    <h3 *ngIf="auxModificarAsesor">En el presente formulario podrás modificar un asesor</h3>
+  
+    <form [formGroup]="formAsesores" class="w-100" *ngIf="auxCrearAsesor || auxModificarAsesor">
+  
+        <div class="row">
+    
+            <div class="col-xs-11 col-lg-6">
+                <mat-form-field class="w-100">
+                    <input matInput formControlName="nombre" placeholder="Nombre">
+                </mat-form-field>        
+            </div>
+        
+            <div class="col-xs-11 col-lg-6">
+              <mat-form-field class="w-100">                
+                <mat-label>Tipo de asesor</mat-label>                    
+                <mat-select formControlName="tipo">
+                    <mat-option *ngFor="let ta of tipoAsesor" [value]="ta.id_tipo">
+                    {{ta.desc_tipo}}
+                    </mat-option>
+                </mat-select>
+                </mat-form-field>           
+            </div>
+        
+        </div>       
+          
+        <div class="row" style="margin-bottom:50px">
+          <div class="col-xs-12 flex justify-content-center">
+              <button mat-raised-button color="primary" (click)="createAsesorButton()" *ngIf="auxCrearAsesor">Crear asesor</button>
+              <button mat-raised-button color="warn" (click)="modifyAsesorButtonSend()" *ngIf="auxModificarAsesor">Modificar asesor</button>
+          </div>
+        </div>
+    
+    </form>
+  
+  </div>
+  
+  <div class="contenedorTabla">
+  
+    <button mat-raised-button color="primary" style="margin-bottom: 20px;" (click)="addAsesor()">Agregar un Asesor</button>
+  
+    <table class="mat-elevation-z8">
+  
+      <tr class="cabecera">
+        <td>Nombre</td>
+        <td>Tipo</td>      
+        <td>Acciones</td>
+      </tr>
+  
+      <tr *ngFor="let asesor of nAsesores">
+        <td>{{asesor.nombre}}</td>      
+        <td>{{asesor.tipo}}</td>     
+        <td>
+          <button mat-raised-button (click)="modifyAsesorButton(asesor.id)">Editar información</button>
+        </td>
+        
+      </tr>  
+    
+    </table>
+  
+  </div>
 
 </div>
+
+
+
 
   

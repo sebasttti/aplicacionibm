@@ -20,13 +20,13 @@ A continuación se comentarán las ocnsideraciones técnicas para el desarrollo 
 
 Al momento de ingresar a la aplicación, aparece la siguiente pantalla de bienvenida, que permite ir al módulo de lcientes o al módulo de asesores.
 
-[![ex-020](imgReadme/inicio.png)](https://github.com/sebasttti/aplicacionibm/imgReadme/inicio.png)
+[![ex-020](imgReadme/inicio.png)]
 
 ### Módulo de clientes
 
 El módulo de clientes presenta la información de los clientes, y sus tarjetas.
 
-[![ex-020](imgReadme/clientes.png)](https://github.com/sebasttti/aplicacionibm/imgReadme/inicio.png)
+[![ex-020](imgReadme/clientes.png)]
 
 #### Agregar un cliente
 
@@ -34,9 +34,9 @@ Para agregar un cliente, se debe oprimir el botón [Agregar un cliente], en el m
 
 En la sección de agregar clientes se debe agregar la información del cliente y la cantidad de tarjetas que este posea, las cuales se mostrarán en una tabla en la medida en que se vayan insertando.
 
-[![ex-020](imgReadme/add-cliente1.png)](https://github.com/sebasttti/aplicacionibm/imgReadme/inicio.png)
+[![ex-020](imgReadme/add-cliente1.png)]
 
-[![ex-020](imgReadme/add-cliente2.png)](https://github.com/sebasttti/aplicacionibm/imgReadme/inicio.png)
+[![ex-020](imgReadme/add-cliente2.png)]
 
 #### Modificar un cliente
 
@@ -44,21 +44,29 @@ En la sección de agregar clientes se debe agregar la información del cliente y
 
 Los consumos están asociados a una tarjeta. Para ver los consumos, se oprime sobre el numero de la tarjeta por consultar.
 
-[![ex-020](imgReadme/consumo-1.png)](https://github.com/sebasttti/aplicacionibm/imgReadme/inicio.png)
+[![ex-020](imgReadme/consumo-1.png)]
 
 #### Agregar un consumo a una tarjeta
 
 Para agregar un consumo a una tarjeta, se debe oprimir el botón Agregar Consumo en la sección de ocsnumos, el cual desplegará el formulario que le permite a la persona agregar la información.
 
-[![ex-020](imgReadme/consumo-2.png)](https://github.com/sebasttti/aplicacionibm/imgReadme/inicio.png)
+[![ex-020](imgReadme/consumo-2.png)]
 
 ### Módulo de asesores
 
 El módulo de asesres se puede acceder desde el menú principal, oprimiendo el botón Asesores
 
-[![ex-020](imgReadme/asesores.png)](https://github.com/sebasttti/aplicacionibm/imgReadme/inicio.png)
+[![ex-020](imgReadme/asesores.png)]
 
 #### Agregar un asesor
 
+Para agregar un asesor, se debe oprimir el botón [Agregar un asesor], el cual desplegará el formulario a continuación.
+Una vez llenada la informacíon, si los datos son correctos, el asesor se actualizará automáticamente.
+
+[![ex-020](imgReadme/agregarAsesor.png)]
 
 #### Modificar un asesor
+
+Para modificar una asesor, basta con oprimir el botón [Editar información] del asesor que se requiera modificar, aparecerá un formulario parecido al anterior, con la información del asesor cargada, la cual podrá ser modificada y actualizada,
+
+[![ex-020](imgReadme/modificarAsesor.png)]

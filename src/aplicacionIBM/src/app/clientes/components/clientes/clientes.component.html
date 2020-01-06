@@ -1,6 +1,58 @@
 
 <h1>Módulo de clientes</h1>
 
+<!-- ============================= -->
+
+<div class="m-auto mw-90 mt-30">
+
+  <h3>En el presente formulario podrás modificar un cliente</h3>
+
+  <form [formGroup]="formModClientes" class="w-100" *ngIf="auxModCliente">
+
+      <div class="row">
+  
+          <div class="col-xs-11 col-lg-6">
+              <mat-form-field class="w-100">
+                  <input matInput formControlName="nombre" placeholder="Nombre">
+              </mat-form-field>        
+          </div>
+      
+          <div class="col-xs-11 col-lg-6">
+              <mat-form-field class="w-100">
+                  <input matInput formControlName="direccion" placeholder="Dirección">
+              </mat-form-field>        
+          </div>
+      
+      </div>
+      
+      <div class="row">
+      
+          <div class="col-xs-11 col-lg-6">
+              <mat-form-field class="w-100">
+                  <input matInput formControlName="telefono" placeholder="Teléfono">
+              </mat-form-field>        
+          </div>
+      
+          <div class="col-xs-11 col-lg-6">
+              <mat-form-field class="w-100">
+                  <input matInput formControlName="ciudad" placeholder="Ciudad">
+              </mat-form-field>        
+          </div>
+          
+      </div>
+
+      <div class="row" style="margin-bottom:50px">
+        <div class="col-xs-12 flex justify-content-center">
+            <button mat-raised-button color="warn" (click)="modifyClientButton()">Modificar información</button>
+        </div>
+      </div>
+  
+  </form>
+
+</div>
+
+<!-- ============================= -->
+
 <div *ngIf="nClientes.length>0" class="contenedorTabla">
 
   <button mat-raised-button color="primary" style="margin-bottom: 20px;" routerLink="../agregarcliente">Agregar un cliente</button>
@@ -26,7 +78,7 @@
         
       </td>
       <td>
-        <button mat-raised-button [routerLink]="['/editarinformacioncliente/', cliente.id]">Editar información</button>
+        <button mat-raised-button (click)="modifyClientShow(cliente.id)">Editar información</button>
       </td>
       
     </tr>  
